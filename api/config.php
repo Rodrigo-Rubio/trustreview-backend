@@ -9,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'mysql.railway.internal');
 define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'trustreview');
+define('DB_PASS', 'wJnFduVefHVIucYnsRazeOedyQajqrtt');
+define('DB_NAME', 'railway');
 
 function getDB() {
     $conn = new PDO(
