@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: http://localhost:4200');
+header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 header('Content-Type: application/json; charset=utf-8');
@@ -11,12 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 define('DB_HOST', 'mysql.railway.internal');
 define('DB_USER', 'root');
-define('DB_PASS', 'wJnFduVefHVIucYnsRazeOedyQajqrtt');
+define('DB_PASS', 'VyXqSzQOENBgzOBsBRUMChgBZnGuOJRl');
 define('DB_NAME', 'railway');
+define('DB_PORT', '3306');
 
 function getDB() {
     $conn = new PDO(
-        'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4',
+        'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=utf8mb4',
         DB_USER,
         DB_PASS
     );
