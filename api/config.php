@@ -9,21 +9,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-define('DB_HOST', 'mysql.railway.internal');
-define('DB_USER', 'root');
-define('DB_PASS', 'VyXqSzQOENBgzOBsBRUMChgBZnGuOJRl');
-define('DB_NAME', 'railway');
-define('DB_PORT', '3306');
+define('DB_HOST', 'dpg-d8blpr3tqb8s73a22qh0-a');
+define('DB_PORT', '5432');
+define('DB_NAME', 'trustreview_db');
+define('DB_USER', 'trustreview_db_user');
+define('DB_PASS', 'bmZ1egKOSj12s1XEvV1zlBPtnCKqjP8G');
 
 function getDB() {
     $conn = new PDO(
-        'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=utf8mb4',
+        'pgsql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME,
         DB_USER,
         DB_PASS
     );
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $conn->exec("SET NAMES utf8mb4");
-    $conn->exec("SET CHARACTER SET utf8mb4");
     return $conn;
 }
 
